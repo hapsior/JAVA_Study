@@ -31,5 +31,7 @@ public class Main {
         damian.lastName = "Hapka";
         damian.pet = dog;
         damian.car=car;
+
+        System.out.println(damian.car.year);
     }
 }
