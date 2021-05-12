@@ -23,15 +23,13 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
-       /* System.out.println(dog.name);
-        System.out.println(dog.species);
-        dog.printName();
-        dog.printNameAndOwner("Damian");
+
+        Car car = new Car("Accord","Honda","Black",1999);
+
         Human damian = new Human();
         damian.firstName = "Damian";
         damian.lastName = "Hapka";
         damian.pet = dog;
-
-        System.out.println(damian.pet.species); */
+        damian.car=car;
     }
 }

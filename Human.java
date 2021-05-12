@@ -5,4 +5,5 @@ String firstName;
 String lastName;
 Phone phone;
 Animal pet;
+Car car;
 }
