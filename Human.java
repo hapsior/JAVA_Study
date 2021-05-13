@@ -5,7 +5,7 @@ String firstName;
 String lastName;
 Phone phone;
 Animal pet;
-Car car;
+private Car car;
 private Double salary;
 
 public Double getSalary()
@@ -25,5 +25,19 @@ public void setSalary(Double salary)
         this.salary=salary;
     }
 
+}
+public Car getCar(){
+    return this.car;
+}
+public void canIBuyThisCar(Car car){
+    if(salary>car.value){
+        System.out.println("Congrats, car is yours!");
+    }
+    else if(salary>(car.value/(1/12))){
+        System.out.println("Car has been bought on credit!");
+    }
+    else{
+        System.out.println("LOL go get some job!");
+    }
 }
 }

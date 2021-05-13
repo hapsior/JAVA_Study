@@ -24,14 +24,15 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
 
-        Car car = new Car("Accord","Honda","Black",1999);
+        Car car = new Car("Accord","Honda","Black",1999,2000);
 
         Human damian = new Human();
         damian.firstName = "Damian";
         damian.lastName = "Hapka";
         damian.pet = dog;
-        damian.car=car;
+        damian.setSalary(4000.00);
 
-        System.out.println(damian.car.year);
+
+        damian.canIBuyThisCar(car);
     }
 }
