@@ -42,4 +42,7 @@ public void canIBuyThisCar(Car car){
         System.out.println("LOL go get some job!");
     }
 }
+    public String toString(){
+    return this.firstName+" "+this.lastName+" "+this.phone+" "+this.car+" "+this.pet+" "+this.salary;
+    }
 }

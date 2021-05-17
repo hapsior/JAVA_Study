@@ -13,4 +13,15 @@ public class Car {
         this.year=year;
         this.value=value;
     }
+
+    public boolean equals(Object obj)
+    {
+        return (this==obj);
+    }
+    public int hashCode(){
+        return value;
+    }
+    public String toString(){
+        return this.producer+" "+this.model+" "+this.value+" "+this.color+" "+this.year;
+    }
 }

@@ -4,7 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
         Animal dog = new Animal("dog");
-
+        Phone phone = new Phone();
+        phone.producer="Nokia";
+        phone.model="3000";
+        phone.os="Symbian";
+        phone.screenSize=4;
         dog.name = "Szarik";
 
         dog.feed();
@@ -25,6 +29,7 @@ public class Main {
         dog.takeForAWalk();
 
         Car car = new Car("Accord","Honda","Black",1999,2000);
+        Car car2 = new Car("Mondeo","Ford","White",2004,2000);
 
         Human damian = new Human();
         damian.firstName = "Damian";
@@ -34,5 +39,23 @@ public class Main {
 
 
         damian.canIBuyThisCar(car);
+
+        boolean isHashCodeEquals = car.hashCode() == car2.hashCode();
+        if(isHashCodeEquals &&  car.equals(car2)){
+            System.out.println("Cars are the same object");
+        }
+        else{
+            System.out.println("Cars are not the same object");
+        }
+
+        System.out.println(dog);
+        System.out.println(car.color+" "+car2.color);
+
+        System.out.println(car.toString());
+        System.out.println(damian.toString());
+        System.out.println(phone.toString());
+        System.out.println(dog.toString());
+
+        //6.7-8 if we create new package then classes which we put there will stop be accessible for us
     }
 }

@@ -3,6 +3,10 @@ package com.company;
 public class Phone {
     String producer;
     String model;
-    String screenSize;
+    int screenSize;
     String os;
+
+    public String toString(){
+        return this.producer+" "+this.model+" "+this.os+" "+this.screenSize;
+    }
 }

@@ -51,4 +51,7 @@ public class Animal {
     void printNameAndOwner(String owner) {
         System.out.println(owner + " has " + this.name);
     }
+    public String toString(){
+        return this.name+" "+this.weight+" "+this.species;
+    }
 }
