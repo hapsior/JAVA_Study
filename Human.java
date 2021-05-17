@@ -32,9 +32,11 @@ public Car getCar(){
 public void canIBuyThisCar(Car car){
     if(salary>car.value){
         System.out.println("Congrats, car is yours!");
+        this.car=car;
     }
     else if(salary>(car.value/(1/12))){
         System.out.println("Car has been bought on credit!");
+        this.car=car;
     }
     else{
         System.out.println("LOL go get some job!");
