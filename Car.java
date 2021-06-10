@@ -1,6 +1,8 @@
 package com.company;
 
-public class Car {
+import com.company.devices.Device;
+
+public class Car extends Device {
     String model;
     String producer;
     String color;
@@ -21,6 +23,7 @@ public class Car {
     public int hashCode(){
         return value;
     }
+
     public String toString(){
         return this.producer+" "+this.model+" "+this.value+" "+this.color+" "+this.year;
     }
