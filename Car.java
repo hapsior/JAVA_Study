@@ -1,7 +1,5 @@
 package com.company;
 
-import com.company.devices.Device;
-
 public class Car extends Device  {
     String model;
     String producer;
