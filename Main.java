@@ -36,8 +36,8 @@ public class Main {
         damian.lastName = "Hapka";
         damian.pet = dog;
         damian.setSalary(4000.00);
-
-
+        damian.setCar(car);
+        damian.cash=damian.getSalary();
         damian.canIBuyThisCar(car);
 
         boolean isHashCodeEquals = car.hashCode() == car2.hashCode();
@@ -58,5 +58,11 @@ public class Main {
         System.out.println(car.turnOn());
         System.out.println(car.toString());
 
+        Human jacek=new Human();
+        jacek.firstName="Jacek";
+        jacek.lastName="Bania";
+        jacek.setSalary(5000.00);
+
+        car.sell(damian,jacek,2000.00);
     }
 }

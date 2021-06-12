@@ -1,10 +1,11 @@
 package com.company;
 
-public class Human {
+public class Human{
 String firstName;
 String lastName;
 Phone phone;
 Animal pet;
+Double cash;
 private Car car;
 private Double salary;
 
@@ -23,12 +24,15 @@ public void setSalary(Double salary)
         System.out.println("Please sign the paper about rise");
         System.out.println("ZUS already know about your salary, do not try to hide it!");
         this.salary=salary;
+        this.cash=salary;
     }
 
 }
 public Car getCar(){
     return this.car;
 }
+public void setCar(Car car){ this.car=car;}
+public void setCarToNull(){this.car=null;}
 public void canIBuyThisCar(Car car){
     if(salary>car.value){
         System.out.println("Congrats, car is yours!");
@@ -45,4 +49,5 @@ public void canIBuyThisCar(Car car){
     public String toString(){
     return this.firstName+" "+this.lastName+" "+this.phone+" "+this.car+" "+this.pet+" "+this.salary;
     }
+
 }
