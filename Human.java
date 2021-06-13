@@ -1,11 +1,13 @@
 package com.company;
 
+import com.company.creatures.Animal;
+
 public class Human{
-String firstName;
+public String firstName;
 String lastName;
 Phone phone;
-Animal pet;
-Double cash;
+public Animal pet;
+public Double cash;
 private Car car;
 private Double salary;
 

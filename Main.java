@@ -1,9 +1,13 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Pet;
+
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
+        Animal dog = new Pet("dog");
         Phone phone = new Phone();
         phone.producer = "Nokia";
         phone.model = "3000";
@@ -64,5 +68,13 @@ public class Main {
         jacek.setSalary(5000.00);
 
         car.sell(damian,jacek,2000.00);
+
+        dog.feed();
+        dog.feed(1.5);
+        Animal cow=new FarmAnimal("cow");
+        cow.feed(20);
+        System.out.println(cow.getWeight());
+        ((FarmAnimal)cow).beEaten();
+
     }
 }

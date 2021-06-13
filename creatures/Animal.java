@@ -1,9 +1,13 @@
-package com.company;
+package com.company.creatures;
 
-public class Animal implements salleable{
+import com.company.Human;
+import com.company.creatures.Feedable;
+import com.company.salleable;
+
+public abstract class Animal implements salleable, Feedable {
     final public String species;
     private Double weight;
-    String name;
+    public String name;
 
     public Animal(String species) {
         this.species = species;
@@ -17,12 +21,15 @@ public class Animal implements salleable{
             case "mouse":
                 this.weight = 0.01;
                 break;
+            case "cow":
+                this.weight=150.0;
+                break;
             default:
                 this.weight = 1.0;
         }
     }
 
-    void feed() {
+    public void feed() {
         if (this.weight > 0) {
             this.weight *= 1.1;
             System.out.println("thx for food");
@@ -30,8 +37,15 @@ public class Animal implements salleable{
             System.out.println("Now it is too late!");
         }
     }
-
-    void takeForAWalk() {
+    public void feed(double foodWeight){
+        if (this.weight > 0) {
+            this.weight += foodWeight;
+            System.out.println("thx for food");
+        } else {
+            System.out.println("Now it is too late!");
+        }
+    }
+    public void takeForAWalk() {
         if (this.weight > 0) {
             this.weight -= 1.0;
             System.out.println("Thx for a walk, my weight now is: " + this.weight);
@@ -40,7 +54,7 @@ public class Animal implements salleable{
         }
     }
 
-    Double getWeight() {
+    public Double getWeight() {
         return this.weight;
     }
 
