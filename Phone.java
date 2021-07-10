@@ -1,11 +1,17 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Phone extends Device {
     String producer;
     String model;
     int screenSize;
     String os;
-
+    static final String serverAddress="172.245.129.32";
+    static final String protocol="FTP";
+    static final String defaultName="Unknown";
     public String toString(){
         return this.producer+" "+this.model+" "+this.os+" "+this.screenSize;
     }
@@ -19,5 +25,19 @@ public class Phone extends Device {
             seller.cash+=price;
             System.out.println( buyer.firstName+" bought phone from "+seller.firstName);
         }
+    }
+    public void installAnnApp(String name){
+        System.out.println(name+" app was installed");
+    }
+    public void installAnnApp(String name,double version){
+        System.out.println(name+" "+" was installed. Version: "+version);
+    }
+    public void installAnnApp(String name, double version,String serverAddress){
+        System.out.println(name+" "+" was installed. Version: "+version+"\n server address: "+serverAddress);
+    }
+    public void installAnnApp(String... app){
+        List<String[]> apps=new ArrayList<>();
+        apps.add(app);
+        apps.forEach(System.out::println);
     }
 }

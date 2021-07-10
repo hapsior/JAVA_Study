@@ -1,17 +1,19 @@
 package com.company;
 
-public class Car extends Device  {
+public abstract class Car extends Device  {
     String model;
     String producer;
     String color;
     int year;
     int value;
+    int fuel;
     public Car(String model, String producer,String color,int year,int value){
         this.model=model;
         this.producer=producer;
         this.color=color;
         this.year=year;
         this.value=value;
+        this.fuel=0;
     }
 
     public boolean equals(Object obj)
@@ -39,6 +41,8 @@ public class Car extends Device  {
         else{
             System.out.println(buyer.firstName+" doesnt have enough money or car doesnt exist");
             }
+    }
+    public abstract void refuel();
 
-}
+
 }

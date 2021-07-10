@@ -32,8 +32,10 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
 
-        Car car = new Car("Accord", "Honda", "Black", 1999, 2000);
-        Car car2 = new Car("Mondeo", "Ford", "White", 2004, 2000);
+        Car car = new Diesel("Accord", "Honda", "Black", 1999, 2000) {
+
+        };
+        Car car2 = new LPG("Mondeo", "Ford", "White", 2004, 2000);
 
         Human damian = new Human();
         damian.firstName = "Damian";
@@ -76,5 +78,9 @@ public class Main {
         System.out.println(cow.getWeight());
         ((FarmAnimal)cow).beEaten();
 
+
+        phone.installAnnApp("Snapchat");
+        phone.installAnnApp("Snapchat","Facebook","Chrome");
+        car.refuel();
     }
 }
