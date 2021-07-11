@@ -5,13 +5,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Phone extends Device {
-    String producer;
-    String model;
     int screenSize;
     String os;
     static final String serverAddress="172.245.129.32";
     static final String protocol="FTP";
     static final String defaultName="Unknown";
+
+    public Phone(String _producer, String _model, int _year, Double _value) {
+        super(_producer, _model, _year, _value);
+        this.producer=_producer;
+        this.model=_model;
+        this.year=_year;
+        this.value=_value;
+    }
+
     public String toString(){
         return this.producer+" "+this.model+" "+this.os+" "+this.screenSize;
     }

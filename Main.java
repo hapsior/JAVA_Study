@@ -8,11 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Animal dog = new Pet("dog");
-        Phone phone = new Phone();
-        phone.producer = "Nokia";
-        phone.model = "3000";
-        phone.os = "Symbian";
-        phone.screenSize = 4;
+        Device phone = new Phone("Nokia","3310",1999,2500.0);
         dog.name = "Szarik";
 
         dog.feed();
@@ -37,14 +33,9 @@ public class Main {
         };
         Car car2 = new LPG("Mondeo", "Ford", "White", 2004, 2000);
 
-        Human damian = new Human();
-        damian.firstName = "Damian";
-        damian.lastName = "Hapka";
-        damian.pet = dog;
-        damian.setSalary(4000.00);
-        damian.setCar(car);
-        damian.cash=damian.getSalary();
-        damian.canIBuyThisCar(car);
+        Human damian = new Human("Damian","Hao", (Phone) phone,dog,3000.00,4000.00,4);
+
+       // damian.canIBuyThisCar(car);
 
         boolean isHashCodeEquals = car.hashCode() == car2.hashCode();
         if (isHashCodeEquals && car.equals(car2)) {
@@ -64,10 +55,8 @@ public class Main {
         System.out.println(car.turnOn());
         System.out.println(car.toString());
 
-        Human jacek=new Human();
-        jacek.firstName="Jacek";
-        jacek.lastName="Bania";
-        jacek.setSalary(5000.00);
+        Human jacek=new Human("Jacek","Bania", (Phone) phone,dog,3000.00,4000.00,6);
+
 
         car.sell(damian,jacek,2000.00);
 
@@ -79,8 +68,8 @@ public class Main {
         ((FarmAnimal)cow).beEaten();
 
 
-        phone.installAnnApp("Snapchat");
-        phone.installAnnApp("Snapchat","Facebook","Chrome");
+        ((Phone) phone).installAnnApp("Snapchat");
+        ((Phone) phone).installAnnApp("Snapchat","Facebook","Chrome");
         car.refuel();
     }
 }
