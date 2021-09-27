@@ -88,11 +88,28 @@ public class Main {
         car.carOwners=new ArrayList<>();
         car.carOwners.add(damian);
         System.out.println((Arrays.toString(jack.SortCarsFromOldest())));
-        car.sell(damian,jacek,2000.00);
+       // car.sell(damian,jacek,2000.00);
         System.out.println(car.CheckLastOwner(jacek,car.carOwners));
          System.out.println(car.CheckLastOwner(damian,car.carOwners));
 
         System.out.println(car.IsHeSoldHim(damian,jacek,car.carOwners));
         System.out.println(car.WasOwnerAnytime(damian,car.carOwners));
+        Application snapchat=new Application("Snapchat",9.56,100.00);
+        System.out.println(jacek.cash);
+        ((Phone) phone).InstallAnnApp(jacek,snapchat);
+        System.out.println(jacek.cash);
+        Application twitter=new Application("Twitter",1.42,1234.50);
+        Application facebook=new Application("Facebook",99.99,4.0);
+        Application discord=new Application("Discord",32.13,0.0);
+        ((Phone) phone).CheckInstalledApp(twitter);
+        ((Phone) phone).CheckInstalledApp(snapchat);
+        ((Phone) phone).CheckInstalledApp("Twitter");
+        ((Phone) phone).CheckInstalledApp("Snapchat");
+        ((Phone) phone).InstallAnnApp(jacek,facebook);
+        ((Phone) phone).InstallAnnApp(jacek,discord);
+        ((Phone) phone).DisplayAllFreeApps();
+        System.out.println(((Phone) phone).CountValueOfApps());
+        ((Phone) phone).SortAppsByName();
+        ((Phone) phone).SortAppsFromCheapest();
     }
 }

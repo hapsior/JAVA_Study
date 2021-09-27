@@ -84,4 +84,7 @@ public abstract class Car extends Device  {
         }
         return false;
     }
+    public int GetYear(){
+        return year;
+    }
 }
