@@ -6,7 +6,7 @@ public abstract class Car extends Device  {
     String color;
 
     int fuel;
-    List<Human> carOwners;
+    public List<Human> carOwners;
     public Car(String model,String producer,String color,int year,Double value){
         super(producer,model,year,value);
         this.model=model;
@@ -15,8 +15,14 @@ public abstract class Car extends Device  {
         this.color=color;
         this.year=year;
         this.fuel=0;
-    }
 
+    }
+    public List<Human> getCarOwners(){
+        return carOwners;
+    }
+    public void setCarOwners(List<Human> carOwners){
+        this.carOwners=carOwners;
+    }
     //public boolean equals(Object obj)
     //{
     //    return (this==obj);
@@ -26,6 +32,7 @@ public abstract class Car extends Device  {
     //}
 
     public String toString(){
+
         return this.producer+" "+this.model+" "+this.value+" "+this.color+" "+this.year;
     }
 
@@ -38,7 +45,7 @@ public abstract class Car extends Device  {
 
 
             for (int i = 0; i < cars.length; i++) {
-                if(this.model.equals(cars[i].model)&&buyer.cash>price&&buyer.CheckAvailablePlace()&&CheckLastOwner(seller)){
+                if(this.model.equals(cars[i].model)&&buyer.cash>price&&buyer.CheckAvailablePlace()&&CheckLastOwner(seller,carOwners)){
                     buyer.SetCar(cars[i]);
                     seller.setCarToNull(cars[i]);
                     buyer.cash -= price;
@@ -55,23 +62,23 @@ public abstract class Car extends Device  {
 
     }
     public abstract void refuel();
-    public boolean CheckLastOwner(Human owner){
+    public boolean CheckLastOwner(Human owner,List<Human> carOwners){
         if(owner==carOwners.get(carOwners.size()-1)){
             return true;
         }
             return false;
     }
-    public boolean WasOwnerAnytime(Human human){
-        for (int i = 0; i < carOwners.size(); i++) {
-            if(human==carOwners.get(i)){
+    public boolean WasOwnerAnytime(Human human,List<Human> carOwners){
+        for (int i = 0; i < this.carOwners.size(); i++) {
+            if(human== this.carOwners.get(i)){
                 return true;
             }
         }
         return false;
     }
-    public boolean IsHeSoldHim(Human seller,Human buyer){
+    public boolean IsHeSoldHim(Human seller,Human buyer,List<Human> carOwners){
         for (int i = 0; i < carOwners.size(); i++) {
-            if(buyer==carOwners.get(i)&&seller==carOwners.get(i-1)){
+            if(buyer== carOwners.get(i)&&seller== carOwners.get(i-1)){
                 return true;
             }
         }

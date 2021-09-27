@@ -4,7 +4,9 @@ import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Pet;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -83,8 +85,14 @@ public class Main {
         jack.SetCar(audi,3);
         damian.SetCar(car,1);
         System.out.println(jack.CountValueOfYourCars());
-        //System.out.println((jack.SortCarsFromOldest()));
+        car.carOwners=new ArrayList<>();
+        car.carOwners.add(damian);
+        System.out.println((Arrays.toString(jack.SortCarsFromOldest())));
         car.sell(damian,jacek,2000.00);
+        System.out.println(car.CheckLastOwner(jacek,car.carOwners));
+         System.out.println(car.CheckLastOwner(damian,car.carOwners));
 
+        System.out.println(car.IsHeSoldHim(damian,jacek,car.carOwners));
+        System.out.println(car.WasOwnerAnytime(damian,car.carOwners));
     }
 }

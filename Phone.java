@@ -46,4 +46,5 @@ public class Phone extends Device {
         apps.add(app);
         apps.forEach(System.out::println);
     }
+
 }

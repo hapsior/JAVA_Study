@@ -1,7 +1,7 @@
 package com.company;
 import com.company.creatures.Animal;
 
-import java.lang.reflect.Array;
+import java.sql.Array;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -109,8 +109,22 @@ public void canIBuyThisCar(Car car){
         return value;
     }
     public Car[] SortCarsFromOldest(){
-        Comparator<Car> byYear=Comparator.comparing(Car::GetValue);
-        Arrays.sort(garage,byYear);
+
+        int arrayLength=0;
+        for (int i = 0; i < garage.length; i++) {
+            if(garage[i]!=null){
+                arrayLength+=1;
+            }
+        }
+        Car[] carsIngarage =new Car[arrayLength];
+        for (int i = 0; i < garage.length; i++) {
+            if(garage[i]!=null){
+                carsIngarage[i]=garage[i];
+
+            }
+        }
+        Comparator<Car> byYear=Comparator.comparing(Car::GetYear);
+        Arrays.sort(carsIngarage,byYear);
         return garage;
     }
     public boolean CheckAvailablePlace() throws Exception {
