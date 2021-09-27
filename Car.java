@@ -27,19 +27,34 @@ public abstract class Car extends Device  {
     }
 
 
-//    @Override
-//    public void sell(Human seller, Human buyer, Double price) {
-//        if(seller.getCar(Car)&&buyer.cash>price) {
-//            buyer.setCar(seller.getCar());
-//            seller.setCarToNull();
-//            buyer.cash -= price;
-//            seller.cash += price;
-//            System.out.println(buyer.firstName + " bought car from " + seller.firstName);
-//        }
-//        else{
-//            System.out.println(buyer.firstName+" doesnt have enough money or car doesnt exist");
-//            }
-//    }
+
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+
+        Car cars[]=seller.GetCars();
+
+
+
+            for (int i = 0; i < cars.length; i++) {
+                if(this.model.equals(cars[i].model)&&buyer.cash>price&&buyer.CheckAvailablePlace()){
+                    buyer.SetCar(cars[i]);
+                    seller.setCarToNull(cars[i]);
+                    buyer.cash -= price;
+                    seller.cash += price;
+                    System.out.println(buyer.firstName + " bought car from " + seller.firstName);
+                }
+                else{
+                    System.out.println(buyer.firstName+" doesnt have enough money or car doesnt exist or there is no place in the garage");
+                }
+
+
+
+
+
+        }
+
+
+
+    }
     public abstract void refuel();
 
 

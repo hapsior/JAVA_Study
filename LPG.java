@@ -11,8 +11,5 @@ public class LPG extends Car{
         System.out.println("fuel: "+fuel);
     }
 
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
 
-    }
 }

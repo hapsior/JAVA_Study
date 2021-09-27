@@ -20,7 +20,11 @@ public Device(String _producer,String _model,int _year,Double _value){
     }
 
     public String turnOn(){
+
     return "Turned on!";
+}
+public Double GetValue(){
+    return value;
 }
 
 

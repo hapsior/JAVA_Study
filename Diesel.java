@@ -3,6 +3,11 @@ package com.company;
 public class Diesel extends Car{
     public Diesel(String model, String producer, String color, int year, double value) {
         super(model, producer, color, year, value);
+        this.model=model;
+        this.producer=producer;
+        this.color=color;
+        this.year=year;
+        this.value=value;
     }
 
     @Override
@@ -11,8 +16,5 @@ public class Diesel extends Car{
         System.out.println("fuel: "+fuel);
     }
 
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
 
-    }
 }

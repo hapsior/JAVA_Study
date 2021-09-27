@@ -4,9 +4,11 @@ import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Pet;
 
+import java.util.Arrays;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Animal dog = new Pet("dog");
         Device phone = new Phone("Nokia","3310",1999,2500.0);
         dog.name = "Szarik";
@@ -58,7 +60,7 @@ public class Main {
         Human jacek=new Human("Jacek","Bania", (Phone) phone,dog,3000.00,4000.00,6);
 
 
-        car.sell(damian,jacek,2000.00);
+
 
         dog.feed();
         dog.feed(1.5);
@@ -71,5 +73,18 @@ public class Main {
         ((Phone) phone).installAnnApp("Snapchat");
         ((Phone) phone).installAnnApp("Snapchat","Facebook","Chrome");
         car.refuel();
+        Phone motorola=new Phone("Motorola","GX",2012,3000.00);
+        Human jack = new Human("Jackie","Chan",motorola,cow,10000.00,3000.00,4);
+        Car suzuki=new LPG("Swift","Suzuki","black",2009,5000.0);
+        Car bmw=new LPG("e36","BMW","green",1996,1500.00);
+        Car audi=new Diesel("A6", "AUDI", "silver", 2009, 5000.00);
+        jack.SetCar(suzuki,1);
+        jack.SetCar(bmw,2);
+        jack.SetCar(audi,3);
+        damian.SetCar(car,1);
+        System.out.println(jack.CountValueOfYourCars());
+        //System.out.println((jack.SortCarsFromOldest()));
+        car.sell(damian,jacek,2000.00);
+
     }
 }

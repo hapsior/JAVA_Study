@@ -3,7 +3,6 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 public class Phone extends Device {
     int screenSize;
     String os;
@@ -11,12 +10,12 @@ public class Phone extends Device {
     static final String protocol="FTP";
     static final String defaultName="Unknown";
 
-    public Phone(String _producer, String _model, int _year, Double _value) {
-        super(_producer, _model, _year, _value);
-        this.producer=_producer;
-        this.model=_model;
-        this.year=_year;
-        this.value=_value;
+    public Phone(String producer, String model, int year, Double value) {
+        super(producer, model, year, value);
+        this.producer=producer;
+        this.model=model;
+        this.year=year;
+        this.value=value;
     }
 
     public String toString(){
